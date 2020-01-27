@@ -3,8 +3,8 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
-CREATE SCHEMA IF NOT EXISTS 'db' DEFAULT CHARACTER SET utf8 ;
-USE 'db' ;
+CREATE SCHEMA IF NOT EXISTS db DEFAULT CHARACTER SET utf8 ;
+USE db;
 
 -- -----------------------------------------------------
 -- Table 'db'.'Academy'
@@ -47,7 +47,7 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table 'db'.'Course'
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS 'db'.'Course' (
+CREATE TABLE IF NOT EXISTS db.Course (
   'Id' INT(11) NOT NULL AUTO_INCREMENT,
   'Name' VARCHAR(255) NOT NULL,
   'CourseCode' VARCHAR(7) NOT NULL,
@@ -69,7 +69,7 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table 'db'.'Exam'
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS 'db'.'Exam' (
+CREATE TABLE IF NOT EXISTS db.Exam (
   'Id' INT(11) NOT NULL AUTO_INCREMENT,
   'Filename' VARCHAR(255) NOT NULL,
   'Date' DATE NOT NULL,
@@ -91,7 +91,7 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table 'db'.'Settings'
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS 'db'.'Settings' (
+CREATE TABLE IF NOT EXISTS db.Settings (
   'Id' INT(11) NOT NULL AUTO_INCREMENT,
   'CookieSessionMinutes' INT(11) NOT NULL,
   'HomePageHtml' TEXT NOT NULL,
@@ -108,7 +108,7 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table 'db'.'User'
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS 'db'.'User' (
+CREATE TABLE IF NOT EXISTS db.User (
   'Id' INT(11) NOT NULL AUTO_INCREMENT,
   'Name' VARCHAR(255) NOT NULL,
   'IsSuperUser' TINYINT(1) NOT NULL,
@@ -121,11 +121,11 @@ DEFAULT CHARACTER SET = utf8;
 USE 'db';
 
 DELIMITER $$
-USE 'db'$$
+USE db $$
 CREATE
 DEFINER='db'@'%'
-TRIGGER 'db'.'CourseCodeCompliesWithSubjectCode'
-BEFORE INSERT ON 'db'.'Course'
+TRIGGER db.CourseCodeCompliesWithSubjectCode
+BEFORE INSERT ON db.Course
 FOR EACH ROW
 BEGIN
 	IF SUBSTRING(new.CourseCode, 1, 2) <> (SELECT 	Code
