@@ -1,4 +1,4 @@
-CREATE TABLE db.Person (
+CREATE TABLE Person (
     PersonID int,
     LastName varchar(255),
     FirstName varchar(255),
@@ -6,6 +6,6 @@ CREATE TABLE db.Person (
     City varchar(255)
 );
 
-CREATE TABLE db.Wtf (
+CREATE TABLE Wtf (
     WtfID int,
 );
