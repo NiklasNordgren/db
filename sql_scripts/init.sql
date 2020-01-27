@@ -5,7 +5,3 @@ CREATE TABLE db.Person (
     Address varchar(255),
     City varchar(255)
 );
-
-CREATE TABLE db.Wtf (
-    WtfID int,
-);
