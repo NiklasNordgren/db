@@ -116,11 +116,11 @@ DEFAULT CHARACTER SET = utf8;
 USE db;
 
 DELIMITER $$
-USE 'db'$$
+USE db$$
 CREATE
-DEFINER='db'@'%'
-TRIGGER 'db'.'CourseCodeCompliesWithSubjectCode'
-BEFORE INSERT ON 'db'.'Course'
+DEFINER=db@'%'
+TRIGGER db.CourseCodeCompliesWithSubjectCode
+BEFORE INSERT ON db.Course
 FOR EACH ROW
 BEGIN
 	IF SUBSTRING(new.CourseCode, 1, 2) <> (SELECT 	Code
