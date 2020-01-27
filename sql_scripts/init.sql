@@ -9,7 +9,7 @@ USE 'db' ;
 -- -----------------------------------------------------
 -- Table 'db'.'Academy'
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS 'db'.'Academy' (
+CREATE TABLE IF NOT EXISTS db.Academy (
   'Id' INT(11) NOT NULL AUTO_INCREMENT,
   'Name' VARCHAR(255) NOT NULL,
   'Abbreviation' VARCHAR(255) NOT NULL,
@@ -25,7 +25,7 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table 'db'.'Subject'
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS 'db'.'Subject' (
+CREATE TABLE IF NOT EXISTS db.Subject (
   'Id' INT(11) NOT NULL AUTO_INCREMENT,
   'Code' VARCHAR(2) NOT NULL,
   'Name' VARCHAR(255) NOT NULL,
