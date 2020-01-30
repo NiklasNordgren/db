@@ -154,11 +154,11 @@ BEGIN
     END IF;
     IF CHAR_LENGTH(NEW.CourseCode) < 6 THEN
 		SIGNAL SQLSTATE '45000'
-            SET MESSAGE_TEXT = 'Course code must start with three uppercase letters followed by three digits';
+            SET MESSAGE_TEXT = 'Course code must start with three uppercase letters followed by three or four digits';
     END IF;
-    IF NOT REGEXP_LIKE(NEW.CourseCode, '^[A-ZÅÄÖ]{3}[0-9]{3}') THEN
+    IF NOT REGEXP_LIKE(NEW.CourseCode, '^[A-ZÅÄÖ]{3}[0-9]{3}', 'c') THEN
 		SIGNAL SQLSTATE '45000'
-            SET MESSAGE_TEXT = 'Course code must start with three uppercase letters followed by three digits';
+            SET MESSAGE_TEXT = 'Course code must start with three uppercase letters followed by three or four digits';
     END IF;
 	IF SUBSTRING(new.CourseCode, 1, 2) <> (SELECT 	Code
 											FROM	Subject
@@ -185,7 +185,7 @@ BEGIN
 		SIGNAL SQLSTATE '45000'
             SET MESSAGE_TEXT = 'Course code must start with three uppercase letters followed by three digits';
     END IF;
-    IF NOT REGEXP_LIKE(NEW.CourseCode, '^[A-ZÅÄÖ]{3}[0-9]{3}') THEN
+    IF NOT REGEXP_LIKE(NEW.CourseCode, '^[A-ZÅÄÖ]{3}[0-9]{3}', 'c') THEN
 		SIGNAL SQLSTATE '45000'
             SET MESSAGE_TEXT = 'Course code must start with three uppercase letters followed by three digits';
     END IF;
@@ -214,7 +214,7 @@ BEGIN
     END IF;
 END $$
 
-CREATE TRIGGER UserInsert BEFORE INSERT ON exte.User FOR EACH ROW
+CREATE TRIGGER UserInsert BEFORE INSERT ON User FOR EACH ROW
 BEGIN
     IF NOT REGEXP_LIKE(NEW.Name, '^[[:alnum:]-_]+$') THEN
 		SIGNAL SQLSTATE '45000'
@@ -226,7 +226,7 @@ BEGIN
     END IF;
 END $$
 
-CREATE TRIGGER UserUpdate BEFORE UPDATE ON exte.User FOR EACH ROW
+CREATE TRIGGER UserUpdate BEFORE UPDATE ON User FOR EACH ROW
 BEGIN
     IF NOT REGEXP_LIKE(NEW.Name, '^[[:alnum:]-_]+$') THEN
 		SIGNAL SQLSTATE '45000'
@@ -286,6 +286,6 @@ GRANT UPDATE, DELETE, INSERT, SELECT ON db.course TO app@'%';
 GRANT UPDATE, DELETE, INSERT, SELECT ON db.exam TO app@'%';
 GRANT UPDATE, DELETE, INSERT, SELECT ON db.subject TO app@'%';
 GRANT UPDATE, DELETE, INSERT, SELECT ON db.user TO app@'%';
-GRANT SELECT, INSERT ON exte.settings TO app@'%';
+GRANT SELECT, INSERT ON db.settings TO app@'%';
 CREATE USER 'exte_app'@'%' IDENTIFIED BY 'exte_app';
 GRANT 'app' TO 'exte_app'@'%';
