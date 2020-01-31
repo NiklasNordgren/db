@@ -72,7 +72,7 @@ CREATE TABLE Academy (
   PRIMARY KEY (Id)
 )
 ENGINE = INNODB,
-AUTO_INCREMENT = 83,
+AUTO_INCREMENT = 1,
 AVG_ROW_LENGTH = 5461,
 CHARACTER SET utf8,
 COLLATE utf8_general_ci;
@@ -101,7 +101,7 @@ CREATE TABLE Subject (
   PRIMARY KEY (Id)
 )
 ENGINE = INNODB,
-AUTO_INCREMENT = 47,
+AUTO_INCREMENT = 1,
 AVG_ROW_LENGTH = 963,
 CHARACTER SET utf8,
 COLLATE utf8_general_ci;
@@ -137,7 +137,7 @@ CREATE TABLE Course (
   PRIMARY KEY (Id)
 )
 ENGINE = INNODB,
-AUTO_INCREMENT = 29,
+AUTO_INCREMENT = 1,
 AVG_ROW_LENGTH = 1489,
 CHARACTER SET utf8,
 COLLATE utf8_general_ci;
@@ -174,7 +174,7 @@ CREATE TABLE Exam (
   PRIMARY KEY (Id)
 )
 ENGINE = INNODB,
-AUTO_INCREMENT = 302,
+AUTO_INCREMENT = 1,
 AVG_ROW_LENGTH = 2340,
 CHARACTER SET utf8,
 COLLATE utf8_general_ci;
@@ -202,7 +202,7 @@ CREATE TABLE User (
   PRIMARY KEY (Id)
 )
 ENGINE = INNODB,
-AUTO_INCREMENT = 83,
+AUTO_INCREMENT = 1,
 AVG_ROW_LENGTH = 5461,
 CHARACTER SET utf8,
 COLLATE utf8_general_ci;
@@ -226,7 +226,7 @@ CREATE TABLE Settings (
   PRIMARY KEY (Id)
 )
 ENGINE = INNODB,
-AUTO_INCREMENT = 69,
+AUTO_INCREMENT = 1,
 AVG_ROW_LENGTH = 1966,
 CHARACTER SET utf8,
 COLLATE utf8_general_ci;
@@ -287,9 +287,10 @@ INSERT INTO Course VALUES
 -- Dumping data for table User
 --
 INSERT INTO User VALUES
-(5, '17hame01', 1),
-(76, '17mame03', 1),
-(82, '17salu03', 1);
+(1, '17hame01', 1),
+(2, '17mame03', 1),
+(3, '17salu03', 1);
+(4, 'thu16nnn', 1);
 
 -- 
 -- Dumping data for table Settings
@@ -325,13 +326,6 @@ INSERT INTO Settings VALUES
 -- Dumping data for table Exam
 --
 INSERT INTO Exam VALUES
-(45, 'pm.pdf', '2019-11-17', 6, '2022-11-17', 0),
-(46, 'Sannakunskap.pdf', '2019-11-25', 7, '2022-11-25', 0),
-(47, 'Mattiaskunskap.pdf', '2019-11-30', 8, '2022-12-03', 0),
-(48, 'Niklaskunskap.pdf', '2019-12-09', 9, '2022-12-09', 0),
-(49, 'Thomaskunskap.pdf', '2019-12-07', 10, '2022-12-07', 0),
-(295, 'Projektplan.pdf', '2020-01-14', 6, '2023-01-13', 0),
-(296, 'Laboration1.pdf', '2020-01-14', 6, '2023-01-13', 0);
 
 --
 -- Set default database
