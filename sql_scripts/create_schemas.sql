@@ -289,7 +289,7 @@ INSERT INTO Course VALUES
 INSERT INTO User VALUES
 (1, '17hame01', 1),
 (2, '17mame03', 1),
-(3, '17salu03', 1);
+(3, '17salu03', 1),
 (4, 'thu16nnn', 1);
 
 -- 
