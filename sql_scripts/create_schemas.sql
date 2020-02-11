@@ -296,7 +296,22 @@ INSERT INTO User VALUES
 -- Dumping data for table Settings
 --
 INSERT INTO Settings VALUES
-(1, 120, '<p>Test Home</p>', '<p>Test About</p>', 3, '2020-01-17 08:24:03');
+(1, 120, 
+"<h1>Welcome to Högskolan i Gävle's Exam Center!</h1>
+<p>
+Here you will find exams for many of the courses offered at HiG so that you can study for and do well at your upcoming exams.
+</p>
+<p>
+Browse for exams by choosing an academy in the toolbar above or use the search field in the top-right corner.
+</p>", 
+"<h1>About</h1>
+    <p>This website is made for the Univeristy of Gävle, to get easier access to the example exams they offer.</p>
+    <p>You can simply click on an Academy on the top navbar and navigate thorugh subjects and courses to find 
+        <br>your exams
+        or you could use the search bar to find what you are looking for.
+    </p>
+    <p>Made by students, for students.</p>",
+ 3, '2020-01-17 08:24:03');
 
 -- 
 -- Dumping data for table Exam
