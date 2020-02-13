@@ -290,7 +290,9 @@ INSERT INTO User VALUES
 (2, '17mame03', 1),
 (3, '17salu03', 1),
 (4, 'lsa', 1),
-(5, 'thu16nnn', 1);
+(5, 'leaask', 1),
+(6, '17thlu01', 1),
+(7, 'thu16nnn', 1);
 
 -- 
 -- Dumping data for table Settings
