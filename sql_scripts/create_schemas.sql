@@ -264,8 +264,7 @@ INSERT INTO Subject VALUES
 (40, 'MA', 'Matematik', 0, 12),
 (41, 'FY', 'Fysik', 0, 12),
 (42, 'EN', 'Engelska', 0, 13),
-(43, 'PE', 'Pedagogik', 0, 13),
-(44, 'HG', 'ghag', 0, 11);
+(43, 'PE', 'Pedagogik', 0, 13);
 
 -- 
 -- Dumping data for table Course
