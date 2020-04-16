@@ -500,7 +500,7 @@ BEGIN
     END IF;
     IF NOT REGEXP_LIKE(NEW.CourseCode, '(^([A-ZÅÄÖ]{3}[0-9]{3})([A-ZÅÄÖ])?)|(^([A-ZÅÄÖ]{2}[A-ZÅÄÖ0-9]{4}))', 'c') THEN
 		SIGNAL SQLSTATE '45000'
-            SET MESSAGE_TEXT = 'Course code must start with threef uppercase letters followed by three digits';
+            SET MESSAGE_TEXT = 'Course code must start with three uppercase letters followed by three digits';
     END IF;
 	IF SUBSTRING(new.CourseCode, 1, 2) <> (SELECT 	Code
 											FROM	Subject
