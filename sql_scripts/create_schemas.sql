@@ -492,7 +492,7 @@ BEGIN
     END IF;
     IF CHAR_LENGTH(NEW.Name) < 3 THEN
 		SIGNAL SQLSTATE '45000'
-            SET MESSAGE_TEXT = 'Course dname must be at least three letters long';
+            SET MESSAGE_TEXT = 'Course name must be at least three letters long';
     END IF;
     IF CHAR_LENGTH(NEW.CourseCode) < 6 THEN
 		SIGNAL SQLSTATE '45000'
