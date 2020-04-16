@@ -312,7 +312,7 @@ Browse for exams by choosing an academy in the toolbar above or use the search f
         <br>your exams
         or you could use the search bar to find what you are looking for.
     </p>
-    <p>Made by students, for students.</p>",
+    <p>ABC Made by students, for students.</p>",
  3, '2020-01-17 08:24:03');
 
 --
