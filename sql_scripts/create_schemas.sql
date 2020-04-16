@@ -301,7 +301,7 @@ INSERT INTO Settings VALUES
 (1, 120,
 "<h1>Welcome to Högskolan i Gävle's Exam Center!</h1>
 <p>
-Here you will find exams for many of the courses offered at HiG so that you can study for and do well at your upcoming exams.
+Here you will find exams for manfy of the courses offered at HiG so that you can study for and do well at your upcoming exams.
 </p>
 <p>
 Browse for exams by choosing an academy in the toolbar above or use the search field in the top-right corner.
