@@ -6,17 +6,17 @@
 -- Client version: 4.1
 --
 
---
+-- 
 -- Disable foreign keys
---
+-- 
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 
---
+-- 
 -- Set SQL mode
---
+-- 
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
---
+-- 
 -- Set character set the client will use to send SQL statements to the server
 --
 SET NAMES 'utf8';
@@ -80,13 +80,13 @@ COLLATE utf8_general_ci;
 --
 -- Create index `Abbreviation` on table `Academy`
 --
-ALTER TABLE Academy
+ALTER TABLE Academy 
   ADD UNIQUE INDEX Abbreviation(Abbreviation);
 
 --
 -- Create index `Name` on table `Academy`
 --
-ALTER TABLE Academy
+ALTER TABLE Academy 
   ADD UNIQUE INDEX Name(Name);
 
 --
@@ -109,19 +109,19 @@ COLLATE utf8_general_ci;
 --
 -- Create index `Code` on table `Subject`
 --
-ALTER TABLE Subject
+ALTER TABLE Subject 
   ADD UNIQUE INDEX Code(Code);
 
 --
 -- Create index `Name` on table `Subject`
 --
-ALTER TABLE Subject
+ALTER TABLE Subject 
   ADD UNIQUE INDEX Name(Name);
 
 --
 -- Create foreign key
 --
-ALTER TABLE Subject
+ALTER TABLE Subject 
   ADD CONSTRAINT Subject_ibfk_1 FOREIGN KEY (AcademyId)
     REFERENCES Academy(Id) ON DELETE CASCADE;
 
@@ -145,19 +145,19 @@ COLLATE utf8_general_ci;
 --
 -- Create index `CourseCode` on table `Course`
 --
-ALTER TABLE Course
+ALTER TABLE Course 
   ADD UNIQUE INDEX CourseCode(CourseCode);
 
 --
 -- Create index `Name` on table `Course`
 --
-ALTER TABLE Course
+ALTER TABLE Course 
   ADD UNIQUE INDEX Name(Name);
 
 --
 -- Create foreign key
 --
-ALTER TABLE Course
+ALTER TABLE Course 
   ADD CONSTRAINT Course_ibfk_1 FOREIGN KEY (SubjectId)
     REFERENCES Subject(Id) ON DELETE CASCADE;
 
@@ -182,13 +182,13 @@ COLLATE utf8_general_ci;
 --
 -- Create index `Name` on table `Exam`
 --
-ALTER TABLE Exam
+ALTER TABLE Exam 
   ADD UNIQUE INDEX Name(Filename);
 
 --
 -- Create foreign key
 --
-ALTER TABLE Exam
+ALTER TABLE Exam 
   ADD CONSTRAINT Exam_ibfk_1 FOREIGN KEY (CourseId)
     REFERENCES Course(Id) ON DELETE CASCADE;
 
@@ -210,7 +210,7 @@ COLLATE utf8_general_ci;
 --
 -- Create index `Name` on table `User`
 --
-ALTER TABLE User
+ALTER TABLE User 
   ADD UNIQUE INDEX Name(Name);
 
 --
@@ -234,10 +234,10 @@ COLLATE utf8_general_ci;
 --
 -- Create index `Created` on table `Settings`
 --
-ALTER TABLE Settings
+ALTER TABLE Settings 
   ADD UNIQUE INDEX Created(Created);
 
---
+-- 
 -- Dumping data for table Academy
 --
 INSERT INTO Academy VALUES
@@ -245,14 +245,14 @@ INSERT INTO Academy VALUES
 (12, 'Akademin för teknik och miljö', 'ATM', 0),
 (13, 'Akademin för utbildning och ekonomi', 'AUE', 0);
 
---
+-- 
 -- Dumping data for table Subject
 --
 INSERT INTO Subject VALUES
 (3, 'AH', 'Arbetshälsovetenskap', 0, 11),
 (4, 'CB', 'CBF', 0, 11),
 (5, 'FH', 'Folkhälsovetenskap', 0, 11),
-(6, 'AR', 'Abrkitekturrrr', 0, 12),
+(6, 'AR', 'Arkitekturrrr', 0, 12),
 (7, 'BE', 'Besluts-, risk- och policyanalys', 0, 12),
 (8, 'BY', 'Byggnadsteknik', 0, 12),
 (9, 'BI', 'Biologi', 0, 13),
@@ -266,7 +266,7 @@ INSERT INTO Subject VALUES
 (42, 'EN', 'Engelska', 0, 13),
 (43, 'PE', 'Pedagogik', 0, 13);
 
---
+-- 
 -- Dumping data for table Course
 --
 INSERT INTO Course VALUES
@@ -282,7 +282,7 @@ INSERT INTO Course VALUES
 (24, 'Linjär Algebra', 'MAG051', 0, 40),
 (25, 'Hälsa för arbetare', 'DVG345', 0, 39);
 
---
+-- 
 -- Dumping data for table User
 --
 INSERT INTO User VALUES
@@ -294,28 +294,28 @@ INSERT INTO User VALUES
 (6, '17thlu01', 1),
 (7, 'thu16nnn', 1);
 
---
+-- 
 -- Dumping data for table Settings
 --
 INSERT INTO Settings VALUES
-(1, 120,
+(1, 120, 
 "<h1>Welcome to Högskolan i Gävle's Exam Center!</h1>
 <p>
 Here you will find exams for many of the courses offered at HiG so that you can study for and do well at your upcoming exams.
 </p>
 <p>
 Browse for exams by choosing an academy in the toolbar above or use the search field in the top-right corner.
-</p>",
+</p>", 
 "<h1>About</h1>
     <p>This website is made for the Univeristy of Gävle, to get easier access to the example exams they offer.</p>
-    <p>You can simply click on an Academy on the top navbar and navigate thorugh subjects and courses to find
+    <p>You can simply click on an Academy on the top navbar and navigate thorugh subjects and courses to find 
         <br>your exams
         or you could use the search bar to find what you are looking for.
     </p>
     <p>Made by students, for students.</p>",
  3, '2020-01-17 08:24:03');
 
---
+-- 
 -- Dumping data for table Exam
 --
 INSERT INTO Exam VALUES
@@ -340,7 +340,7 @@ DELIMITER $$
 --
 -- Create trigger `CourseCodeCompliesWithSubjectCode`
 --
-CREATE
+CREATE 
 	DEFINER = 'db'@'%'
 TRIGGER CourseCodeCompliesWithSubjectCode
 	BEFORE INSERT
@@ -361,9 +361,9 @@ DELIMITER ;
 
 
 DELIMITER $$
-CREATE
+CREATE 
   DEFINER = 'db'@'%'
-TRIGGER AcademyInsert
+TRIGGER AcademyInsert 
   BEFORE INSERT
   ON Academy
   FOR EACH ROW
@@ -386,9 +386,9 @@ BEGIN
 	END IF;
 END$$
 
-CREATE
+CREATE 
   DEFINER = 'db'@'%'
-TRIGGER AcademyUpdate
+TRIGGER AcademyUpdate 
   BEFORE UPDATE
   ON Academy
   FOR EACH ROW
@@ -594,12 +594,12 @@ END $$
 DELIMITER ;
 
 
---
+-- 
 -- Restore previous SQL mode
---
+-- 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 
---
+-- 
 -- Enable foreign keys
---
+-- 
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
