@@ -252,7 +252,7 @@ INSERT INTO Subject VALUES
 (3, 'AH', 'Arbetshälsovetenskap', 0, 11),
 (4, 'CB', 'CBF', 0, 11),
 (5, 'FH', 'Folkhälsovetenskap', 0, 11),
-(6, 'AR', 'Arkitekturrrr', 0, 12),
+(6, 'AR', 'ArkitekturrrrG', 0, 12),
 (7, 'BE', 'Besluts-, risk- och policyanalys', 0, 12),
 (8, 'BY', 'Byggnadsteknik', 0, 12),
 (9, 'BI', 'Biologi', 0, 13),
