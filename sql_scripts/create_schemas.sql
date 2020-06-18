@@ -318,7 +318,7 @@ Browse for exams by choosing an academy in the toolbar above or use the search f
 -- 
 -- Dumping data for table Exam
 --
-INSERT INTO Exam VALUES
+-- INSERT INTO Exam VALUES
 
 --
 -- Set default database
