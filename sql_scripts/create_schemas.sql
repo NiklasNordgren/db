@@ -24,6 +24,8 @@ SET NAMES 'utf8';
 --
 -- Set default database
 --
+CREATE DATABASE IF NOT EXISTS db;
+
 USE db;
 
 --
