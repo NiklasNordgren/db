@@ -467,11 +467,11 @@ BEGIN
     END IF;
     IF CHAR_LENGTH(NEW.CourseCode) < 6 THEN
 		SIGNAL SQLSTATE '45000'
-            SET MESSAGE_TEXT = 'Course code must start with three uppercase letters followed by three or four digits';
+            SET MESSAGE_TEXT = 'Course code must start with two uppercase letters followed by a mix of four letters and digits';
     END IF;
     IF NOT REGEXP_LIKE(NEW.CourseCode, '(^([A-ZÅÄÖ]{3}[0-9]{3})([A-ZÅÄÖ])?)|(^([A-ZÅÄÖ]{2}[A-ZÅÄÖ0-9]{4}))', 'c') THEN
 		SIGNAL SQLSTATE '45000'
-            SET MESSAGE_TEXT = 'Course code must start with three uppercase letters followed by three or four digits';
+            SET MESSAGE_TEXT = 'Course code must start with two uppercase letters followed by a mix of four letters and digits';
     END IF;
 	IF SUBSTRING(new.CourseCode, 1, 2) <> (SELECT 	Code
 											FROM	Subject
@@ -496,11 +496,11 @@ BEGIN
     END IF;
     IF CHAR_LENGTH(NEW.CourseCode) < 6 THEN
 		SIGNAL SQLSTATE '45000'
-            SET MESSAGE_TEXT = 'Course code must start with three uppercase letters followed by three digits';
+            SET MESSAGE_TEXT = 'Course code must start with two uppercase letters followed by a mix of four letters and digits';
     END IF;
     IF NOT REGEXP_LIKE(NEW.CourseCode, '(^([A-ZÅÄÖ]{3}[0-9]{3})([A-ZÅÄÖ])?)|(^([A-ZÅÄÖ]{2}[A-ZÅÄÖ0-9]{4}))', 'c') THEN
 		SIGNAL SQLSTATE '45000'
-            SET MESSAGE_TEXT = 'Course code must start with three uppercase letters followed by three digits';
+            SET MESSAGE_TEXT = 'Course code must start with two uppercase letters followed by a mix of four letters and digits';
     END IF;
 	IF SUBSTRING(new.CourseCode, 1, 2) <> (SELECT 	Code
 											FROM	Subject
